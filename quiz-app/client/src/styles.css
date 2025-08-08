@@ -1,0 +1,77 @@
+/* Google Font (Poppins-like) */
+body {
+  margin: 0;
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  background-attachment: fixed;
+}
+
+.app-shell {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 32px 16px;
+}
+
+.card {
+  width: min(760px, 92vw);
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+  animation: pop 300ms ease-out;
+}
+
+@keyframes pop { from { transform: scale(0.98); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+.h1 {
+  margin: 0 0 12px 0;
+  font-size: 38px;
+  font-weight: 800;
+}
+.subtle { color: var(--muted); }
+
+.btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.btn {
+  appearance: none;
+  border: 0;
+  border-radius: 14px;
+  padding: 12px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 80ms ease, box-shadow 120ms ease;
+  box-shadow: 0 6px 0 rgba(0,0,0,0.15);
+}
+.btn:active { transform: translateY(2px); box-shadow: 0 3px 0 rgba(0,0,0,0.15); }
+
+.btn-primary { background: var(--accent); }
+.btn-secondary { background: var(--accent-2); }
+.btn-danger { background: var(--accent-3); color: #fff; }
+
+.room-code {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: #f6f7ff; border-radius: 16px; padding: 10px 16px; font-weight: 800; font-size: 22px;
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 16px 0 0;
+}
+.choice {
+  background: #f8fafc; border-radius: 16px; padding: 14px 16px; font-weight: 600; border: 2px solid transparent;
+}
+.choice:hover { border-color: #e5e7eb; }
+.choice.disabled { opacity: 0.5; pointer-events: none; }
+
+.countdown {
+  font-size: 78px; font-weight: 800; text-align: center; margin: 8px 0 0; letter-spacing: 2px;
+  background: linear-gradient(45deg, var(--accent-2), var(--accent-4));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+.leaderboard { list-style: none; padding: 0; margin: 12px 0 0; }
+.leaderboard li { background:#f6f7ff; margin: 8px 0; padding: 10px 12px; border-radius: 12px; }
